@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+pydantic
+openai
+tavily
+yfinance
+matplotlib
+seaborn
+statsmodels
+asyncio
