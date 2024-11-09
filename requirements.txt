@@ -9,3 +9,5 @@ matplotlib
 seaborn
 statsmodels
 asyncio
+scikit-learn
+tensorflow
