@@ -1,13 +1,5 @@
 streamlit
+requests
 pandas
-numpy
-pydantic
-openai
-tavily-python
-yfinance
 matplotlib
-seaborn
-statsmodels
-asyncio
-scikit-learn
-tensorflow
+numpy
