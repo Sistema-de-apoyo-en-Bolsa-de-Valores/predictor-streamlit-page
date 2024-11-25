@@ -26,7 +26,7 @@ st.markdown("""
 
 # Función de login
 def login(username, password):
-    url = "http://localhost:8080/auth/login"
+    url = "http://arq-api-gateway-1:8080/auth/login"
     payload = {"username": username, "password": password}
     response = requests.post(url, json=payload)
     if response.status_code == 200:
@@ -37,7 +37,7 @@ def login(username, password):
 
 # Función de registro
 def signup(username, password, email, name, lastname):
-    url = "http://localhost:8080/auth/signup"
+    url = "http://arq-api-gateway-1:8080/auth/signup"
     payload = {
         "username": username,
         "password": password,
@@ -59,7 +59,7 @@ def logout():
 
 # Función de predicción y análisis de sentimiento
 def call_stock_prediction_api(ticker, training_period_days, future_days):
-    url = "http://localhost:8080/stock/predict"
+    url = "http://arq-api-gateway-1:8080/stock/predict"
     headers = {"Authorization": f"Bearer {st.session_state['jwt']}"}
     payload = {"ticker": ticker, "training_period_days": training_period_days, "future_days": future_days}
     response = requests.post(url, headers=headers, json=payload)
@@ -70,7 +70,7 @@ def call_stock_prediction_api(ticker, training_period_days, future_days):
         return None
 
 def call_sentiment_news_analysis_api(ticker, max_results):
-    url = "http://localhost:8080/news/analyze"
+    url = "http://arq-api-gateway-1:8080/news/analyze"
     headers = {"Authorization": f"Bearer {st.session_state['jwt']}"}
     params = {"ticker": ticker, "max_results": max_results}
     response = requests.post(url, headers=headers, params=params)
@@ -128,7 +128,7 @@ def plot_sentiment_analysis(data_sentiment_news_analysis_api):
 
 # Función para realizar compra de acciones
 def buy_order(symbol, sec_type, exchange, quantity, order_type, price):
-    url = "http://localhost:8080/order/buy"
+    url = "http://arq-api-gateway-1:8080/order/buy"
     headers = {"Authorization": f"Bearer {st.session_state['jwt']}"}
     payload = {
         "symbol": symbol,
